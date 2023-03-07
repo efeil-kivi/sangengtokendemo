@@ -27,7 +27,7 @@ public class LoginServiceImpl implements LoginService {
 
     @Override
     public ResponseResult login(User user) {
-
+        //下一段代码将login传进来的代码封装成authenticationManager.authenticate()可识别的代码
         UsernamePasswordAuthenticationToken authenticationToken
                 = new UsernamePasswordAuthenticationToken(user.getUserName(), user.getPassword());
         Authentication authenticate = authenticationManager.authenticate(authenticationToken);
