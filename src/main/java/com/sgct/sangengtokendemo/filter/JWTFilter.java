@@ -32,7 +32,7 @@ public class JWTFilter extends OncePerRequestFilter {
         if (!StringUtils.hasText(token)) {
             //为空放行
             filterChain.doFilter(httpServletRequest, httpServletResponse);
-            return;
+            return;//表示下面的代码不会再执行
         }
         //解析token
         String userId;
