@@ -30,7 +30,7 @@ public class LoginServiceImpl implements LoginService {
         //下一段代码将login传进来的代码封装成authenticationManager.authenticate()可识别的代码
         UsernamePasswordAuthenticationToken authenticationToken
                 = new UsernamePasswordAuthenticationToken(user.getUserName(), user.getPassword());
-        Authentication authenticate = authenticationManager.authenticate(authenticationToken);
+        Authentication authenticate = authenticationManager.authenticate(authenticationToken);//将用户信息交给manager进行验证
         if (Objects.isNull(authenticate)) {
             throw new RuntimeException("登陆失败！");
         }
